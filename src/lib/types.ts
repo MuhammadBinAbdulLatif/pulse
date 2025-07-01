@@ -1,0 +1,57 @@
+export interface Slide {
+  id: string;
+  slideName: string;
+  type: string;
+  content: ContentItem; // Assuming ContentItem is another defined type/interface
+  slideOrder: number;
+  className?: string; // Optional property
+}
+
+export type ContentType =
+  | 'column'
+  | 'resizable-column'
+  | 'text'
+  | 'paragraph'
+  | 'image'
+  | 'table'
+  | 'multiColumn'
+  | 'blank'
+  | 'imageAndText'
+  | 'heading1'
+  | 'heading2'
+  | 'heading3'
+  | 'title'
+  | 'heading4'
+  | 'blockquote'
+  | 'numberedList'
+  | 'bulletedList'
+  | 'code'
+  | 'link'
+  | 'quote'
+  | 'divider'
+  | 'calloutBox'
+  | 'todoList'
+  | 'codeBlock'
+  | 'customButton'
+  | 'tableOfContents';
+
+
+export interface ContentItem {
+  id: string;
+  type: ContentType; // Assuming ContentType is an enum or string literal type defined elsewhere
+  name: string;
+  content: ContentItem[] | string | string[][]; // Note: string | string[][] indicates an array of strings or a 2D array of strings
+  initialRows?: number;
+  initialColumns?: number;
+  restrictToDrop?: boolean;
+  columns?: number;
+  placeholder?: string;
+  className?: string;
+  alt?: string;
+  callOutType?: 'success' | 'warning' | 'question' | 'caution';
+  link?: string;
+  code?: string;
+  language?: string;
+  bgColor?: string;
+  isTransparent?: boolean;
+}
