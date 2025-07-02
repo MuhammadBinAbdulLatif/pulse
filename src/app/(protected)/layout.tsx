@@ -1,4 +1,4 @@
-export const dynamic = 'force-dyanmic'
+export const dynamic='force-dynamic'
 import { onAuthenticateUser } from '@/actions/User'
 import { redirect } from 'next/navigation'
 import React from 'react'

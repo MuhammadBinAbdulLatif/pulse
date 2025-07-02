@@ -13,6 +13,7 @@ import Image from 'next/image';
 import NavMain from './nav-main';
 import { data } from '@/constant/nav-link';
 import RecentlyOpened from './recently-opened';
+import NavFooter from './nav-footer';
 type Props = {
     recentProjects: Project[] | [];
     user: User
@@ -21,7 +22,7 @@ type Props = {
 function AppSidebar({recentProjects, user,...props}:Props ) {
   return (
    <Sidebar collapsible='icon' {...props} className='max-w-[212px] bg-background-90'>
-    <SidebarHeader className='pt-6 px-3 pb-0'>
+    <SidebarHeader className='pt-6 px-1 pb-0'>
         <SidebarMenuButton size={'lg'} className='data-[state=open]:text-accent-foreground'>
   <div className="flex flex-row items-center gap-x-4 text-sidebar-primary-foreground">
     <Image
@@ -44,7 +45,9 @@ function AppSidebar({recentProjects, user,...props}:Props ) {
         <SidebarGroup />
         <SidebarGroup />
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter>
+        <NavFooter prismaUser={user} />
+      </SidebarFooter>
    </Sidebar>
   )
 }

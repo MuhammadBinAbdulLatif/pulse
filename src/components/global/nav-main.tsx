@@ -4,7 +4,7 @@ import { SidebarGroup, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '.
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { Clock, LucideProps } from 'lucide-react'
+import {  LucideProps } from 'lucide-react'
 
 type Props = {
     items: {

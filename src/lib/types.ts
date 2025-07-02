@@ -55,3 +55,16 @@ export interface ContentItem {
   bgColor?: string;
   isTransparent?: boolean;
 }
+
+export interface Theme {
+  name: string;
+  fontFamily: string;
+  fontColor: string;
+  backgroundColor: string;
+  slideBackgroundColor: string;
+  accentColor: string;
+  gradientBackground?: string; // The '?' indicates this property is optional
+  sidebarColor?: string;     // The '?' indicates this property is optional
+  navbarColor?: string;      // The '?' indicates this property is optional
+  type: 'light' | 'dark';
+}
