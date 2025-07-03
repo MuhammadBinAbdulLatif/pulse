@@ -14,7 +14,7 @@
   --popover-foreground: oklch(0.3015 0.0572 282.4176);
   --primary: oklch(0.5417 0.1790 288.0332);
   --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.9174 0.0435 292.6901);
+  --secondary: oklch(79.174% 0.10725 290.971);
   --secondary-foreground: oklch(0.4143 0.1039 288.1742);
   --muted: oklch(0.9580 0.0133 286.1454);
   --muted-foreground: oklch(0.5426 0.0465 284.7435);
@@ -174,4 +174,38 @@
 
 .border-vivid {
   border-color: linear-gradient(180deg, #F55C7A 0%, #F6Bc66 100%);
+}
+.bg-pulse {
+  background-color: linear-gradient(180deg, #F55C7A 0%, #F6Bc66 100%);
+}
+.border-pulse {
+  border: 1px solid transparent; /* Essential for border-image to show */
+  border-image: linear-gradient(180deg, #F55C7A 0%, #F6Bc66 100%) 1;
+  /* The '1' above means slice the image 1 unit from each side and stretch */
+}
+
+.gradient-border-container {
+  position: relative;
+  padding: 1px; /* This padding creates space for the pseudo-element's "border" */
+  border-radius: 12px; /* Match your main element's border-radius */
+  overflow: hidden; /* Important to clip the pseudo-element if it's larger */
+}
+
+.gradient-border-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Puts the pseudo-element behind the content */
+  background: linear-gradient(180deg, #F55C7A 0%, #F6Bc66 100%);
+  border-radius: inherit; /* Inherit border-radius from parent */
+}
+
+.gradient-border-content {
+  /* Your actual content styles */
+  background-color: white; /* Or whatever background your card has */
+  border-radius: 11px; /* Slightly smaller than container to show gradient */
+  /* ... other styles for your card content */
 }

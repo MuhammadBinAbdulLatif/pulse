@@ -68,3 +68,16 @@ export interface Theme {
   navbarColor?: string;      // The '?' indicates this property is optional
   type: 'light' | 'dark';
 }
+
+export type Prompt = {
+  id:string,
+  createdAt: string
+  title:string
+  outlines:OutlineCard[] | []
+}
+
+export type OutlineCard = {
+  title: string,
+  id: string
+  order:number
+}

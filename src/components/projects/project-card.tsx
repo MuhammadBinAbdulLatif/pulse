@@ -10,7 +10,7 @@ import { themes } from "@/constant/theme";
 import AlertDialogBox from "./alert-dialog-box";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
-import { recoverProject } from "@/actions/project";
+import { deleteProject, recoverProject } from "@/actions/project";
 type Props = {
   project: Project;
 };
@@ -58,7 +58,7 @@ const ProjectCard = ({ project }: Props) => {
       return;
     }
     try {
-      const res = await recoverProject(project.id);
+      const res = await deleteProject(project.id);
       if (res.status !== 200) {
         toast.error(res.message);
         throw new Error("Falied to recover project");
@@ -66,7 +66,7 @@ const ProjectCard = ({ project }: Props) => {
       setOpen(false);
       setLoading(false);
       router.refresh();
-      toast.success("Project recovered successfully");
+      toast.success("Project deleted successfully");
     } catch (error) {
       console.error("AN error occured", error);
       toast.error("Internal server error. Please Try again.");

@@ -39,7 +39,7 @@ function AppSidebar({recentProjects, user,...props}:Props ) {
   <span className='truncate text-primary text-3xl font-semibold'></span>
 </SidebarMenuButton>
     </SidebarHeader>
-      <SidebarContent className='px-3 mt-10 gap-y-6'>
+      <SidebarContent className=' mt-10 gap-y-6'>
         <NavMain items={data.navMain} />
         <RecentlyOpened recentProjects={recentProjects} />
         <SidebarGroup />
