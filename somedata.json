@@ -1,0 +1,203 @@
+[
+  {
+    "id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "slideName": "Cosmic Origin Background",
+    "type": "cosmicOriginBackground",
+    "className": "relative min-h-[450px] flex items-center justify-center text-white overflow-hidden p-8",
+    "content": {
+      "id": "b2c3d4e5-f6a1-b2c3-d4e5-f6a1b2c3d4e5",
+      "type": "container",
+      "name": "Background Container",
+      "content": [
+        {
+          "id": "c3d4e5f6-a1b2-c3d4-e5f6-a1b2c3d4e5f6",
+          "type": "image",
+          "name": "Background Image",
+          "className": "absolute inset-0 w-full h-full object-cover z-0 filter brightness-50",
+          "content": "https://images.unsplash.com/photo-1446776811953-b23d5795b4e6?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "alt": "A stunning view of Earth from space, with the sun rising over the horizon, symbolizing a new beginning."
+        },
+        {
+          "id": "d4e5f6a1-b2c3-d4e5-f6a1-b2c3d4e5f6a1",
+          "type": "column",
+          "name": "Content Column",
+          "className": "relative z-10 w-full max-w-4xl text-center flex flex-col items-center gap-4",
+          "content": [
+            {
+              "id": "e5f6a1b2-c3d4-e5f6-a1b2-c3d4e5f6a1b2",
+              "type": "heading1",
+              "name": "Heading",
+              "placeholder": "A Universe with a Beginning",
+              "content": "A Universe with a Beginning"
+            },
+            {
+              "id": "f6a1b2c3-d4e5-f6a1-b2c3-d4e5f6a1b2c3",
+              "type": "paragraph",
+              "name": "Paragraph",
+              "className": "text-xl italic font-light",
+              "placeholder": "The Big Bang theory's implication of a universe with a beginning suggests a first cause beyond the universe itself.",
+              "content": "The Big Bang theory's implication of a universe with a beginning suggests a first cause beyond the universe itself."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "f0e1d2c3-b4a5-6789-0123-456789abcdef",
+    "slideName": "Three-Part Harmony",
+    "type": "threePartHarmony",
+    "className": "p-8 mx-auto flex flex-col justify-center items-center min-h-[450px] gap-6",
+    "content": {
+      "id": "e1d2c3b4-a5f0-e1d2-c3b4-a5f0e1d2c3b4",
+      "type": "column",
+      "name": "Main Column",
+      "className": "w-full",
+      "content": [
+        {
+          "id": "d2c3b4a5-f0e1-d2c3-b4a5-f0e1d2c3b4a5",
+          "type": "heading2",
+          "name": "Title",
+          "className": "text-center mb-4",
+          "placeholder": "The Precision of Existence",
+          "content": "The Precision of Existence"
+        },
+        {
+          "id": "c3b4a5f0-e1d2-c3b4-a5f0-e1d2c3b4a5f0",
+          "type": "resizable-column",
+          "name": "Three Columns",
+          "className": "grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-center",
+          "content": [
+            {
+              "id": "b4a5f0e1-d2c3-b4a5-f0e1-d2c3b4a5f0e1",
+              "type": "column",
+              "name": "Column 1",
+              "className": "p-4 border rounded-lg shadow-sm",
+              "content": [
+                {
+                  "id": "a5f0e1d2-c3b4-a5f0-e1d2-c3b4a5f0e1d2",
+                  "type": "heading3",
+                  "name": "Constants",
+                  "placeholder": "Physical Constants",
+                  "content": "Physical Constants"
+                },
+                {
+                  "id": "f0e1d2c3-b4a5-f0e1-d2c3-b4a5f0e1d2c3",
+                  "type": "paragraph",
+                  "name": "Paragraph",
+                  "placeholder": "The fundamental constants of physics, such as gravity and electromagnetism, are set at values that are exquisitely precise.",
+                  "content": ""
+                }
+              ]
+            },
+            {
+              "id": "e1d2c3b4-a5f0-e1d2-c3b4-a5f0e1d2c3b5",
+              "type": "column",
+              "name": "Column 2",
+              "className": "p-4 border rounded-lg shadow-sm bg-slate-50",
+              "content": [
+                {
+                  "id": "d2c3b4a5-f0e1-d2c3-b4a5-f0e1d2c3b4a6",
+                  "type": "image",
+                  "name": "Image",
+                  "className": "w-full h-40 object-cover rounded-md mb-2",
+                  "content": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  "alt": "A complex and glowing computer motherboard, symbolizing intricate design and precise engineering."
+                },
+                {
+                  "id": "c3b4a5f0-e1d2-c3b4-a5f0-e1d2c3b4a5f7",
+                  "type": "paragraph",
+                  "name": "Paragraph",
+                  "className": "font-semibold",
+                  "placeholder": "The extreme fine-tuning of physical constants and initial conditions for life's existence points towards an intelligent designer.",
+                  "content": "The extreme fine-tuning of physical constants and initial conditions for life's existence points towards an intelligent designer."
+                }
+              ]
+            },
+            {
+              "id": "b4a5f0e1-d2c3-b4a5-f0e1-d2c3b4a5f0e8",
+              "type": "column",
+              "name": "Column 3",
+              "className": "p-4 border rounded-lg shadow-sm",
+              "content": [
+                {
+                  "id": "a5f0e1d2-c3b4-a5f0-e1d2-c3b4a5f0e1d9",
+                  "type": "heading3",
+                  "name": "Conditions",
+                  "placeholder": "Initial Conditions",
+                  "content": "Initial Conditions"
+                },
+                {
+                  "id": "f0e1d2c3-b4a5-f0e1-d2c3-b4a5f0e1d2c0",
+                  "type": "paragraph",
+                  "name": "Paragraph",
+                  "placeholder": "The initial state of the universe required an impossibly low entropy state to allow for the formation of complex structures.",
+                  "content": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "12345678-90ab-cdef-0123-456789abcdef",
+    "slideName": "Feature Focus Left",
+    "type": "featureFocusLeft",
+    "className": "min-h-[450px] bg-gray-50",
+    "content": {
+      "id": "23456789-0abc-def0-1234-56789abcdef0",
+      "type": "column",
+      "name": "Column",
+      "content": [
+        {
+          "id": "34567890-abcd-ef01-2345-6789abcdef01",
+          "type": "resizable-column",
+          "name": "Image and Text",
+          "restrictToDrop": true,
+          "content": [
+            {
+              "id": "4567890a-bcde-f012-3456-789abcdef012",
+              "type": "image",
+              "name": "Image",
+              "content": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "alt": "A close-up, detailed macro photograph of a human eye, showcasing its intricate and complex structure."
+            },
+            {
+              "id": "567890ab-cdef-0123-4567-89abcdef0123",
+              "type": "column",
+              "name": "Text Column",
+              "className": "w-full h-full p-8 lg:p-12 flex flex-col justify-center",
+              "content": [
+                {
+                  "id": "67890abc-def0-1234-5678-9abcdef01234",
+                  "type": "heading2",
+                  "name": "Heading",
+                  "content": "Irreducible Complexity",
+                  "placeholder": "Irreducible Complexity"
+                },
+                {
+                  "id": "7890abcd-ef01-2345-6789-abcdef012345",
+                  "type": "paragraph",
+                  "name": "Paragraph",
+                  "className": "mt-4 text-lg",
+                  "content": "The irreducible complexity observed in biological systems is argued to defy explanation by gradual evolutionary processes, implying creation.",
+                  "placeholder": "The irreducible complexity observed in biological systems is argued to defy explanation by gradual evolutionary processes, implying creation."
+                },
+                {
+                  "id": "890abcde-f012-3456-789a-bcdef0123456",
+                  "type": "paragraph",
+                  "name": "Paragraph",
+                  "className": "mt-2 text-gray-600",
+                  "content": "For example, the bacterial flagellum requires numerous protein parts to function. The absence of any single part renders it useless, challenging a step-by-step evolutionary origin.",
+                  "placeholder": "Add a supporting example..."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

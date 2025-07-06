@@ -3,7 +3,6 @@
 import { client } from "@/lib/prisma";
 import { onAuthenticateUser } from "./User";
 import { OutlineCard } from "@/lib/types";
-import { error } from "console";
 
 export const getAllProjects = async () => {
   try {
@@ -148,4 +147,30 @@ export const createProject = async(title: string, outlines: OutlineCard[])=> {
     console.log("Error creating project:", error);
     return { status: 500, message: "Internal server error" };
   }
+}
+
+export const getProjectById = async(id:string)=> {
+   try {
+    const checkUser = await onAuthenticateUser();
+    if (checkUser?.status !== 200 || !checkUser?.user) {
+      return { status: 403, message: "User not authenticated" };
+    }
+    const project = await client.project.findUnique({
+      where: {
+        id: id,
+        userId: checkUser.user.id,
+      }
+    })
+    if(!project){
+      return {
+        status: 403, message: 'You cannot access a project that belongs to someone else'
+      }
+    }
+    return {
+      status: 200, data: project
+    }
+   } catch (error) {
+    console.log("Error fetching project:", error);
+    return { status: 500, message: "Internal server error" };
+   }
 }

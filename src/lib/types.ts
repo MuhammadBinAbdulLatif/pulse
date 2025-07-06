@@ -40,7 +40,7 @@ export interface ContentItem {
   id: string;
   type: ContentType; // Assuming ContentType is an enum or string literal type defined elsewhere
   name: string;
-  content: ContentItem[] | string | string[][]; // Note: string | string[][] indicates an array of strings or a 2D array of strings
+  content:  ContentItem[] | string | string[] | string[][]; // Note: string | string[][] indicates an array of strings or a 2D array of strings
   initialRows?: number;
   initialColumns?: number;
   restrictToDrop?: boolean;
@@ -80,4 +80,43 @@ export type OutlineCard = {
   title: string,
   id: string
   order:number
+}
+export interface LayoutGroup {
+  name: string;
+  layouts: Layout[];
+}
+
+export interface Layout {
+  name: string;
+  icon: React.FC;
+  type: string;
+  component: LayoutSlides;
+  layoutType: string;
+}
+
+export interface LayoutSlides {
+  slideName: string;
+  content: ContentItem
+  className?: string;
+  type: string;
+}
+
+
+
+
+
+
+
+export interface ComponentGroup {
+  name: string;
+  components: Component[];
+}
+
+
+interface Component {
+  name: string;
+  icon: string;
+  type: string;
+  component: ContentItem;
+  componentType: string;
 }

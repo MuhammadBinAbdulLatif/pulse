@@ -47,7 +47,7 @@ const RecentPrompts = () => {
                 <span className='text-sm text-pulse'>
                     Creative AI
                 </span>
-                <Button className='rounded-xl bg-primary dark:hover:bg-gray-700 hover:bg-gray-200 text-primary' variant={'default'} size={'sm'} onClick={()=> handleEdit(prompt?.id)}>
+                <Button className='rounded-xl bg-primary dark:hover:bg-gray-700 hover:bg-gray-200 text-secondary' variant={'default'} size={'sm'} onClick={()=> handleEdit(prompt?.id)}>
                     Edit
                 </Button>
             </div>
