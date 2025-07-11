@@ -24,7 +24,7 @@ export type ContentType =
   | 'heading4'
   | 'blockquote'
   | 'numberedList'
-  | 'bulletedList'
+  | 'bulletList'
   | 'code'
   | 'link'
   | 'quote'

@@ -1,203 +1,284 @@
 [
   {
-    "id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
-    "slideName": "Cosmic Origin Background",
-    "type": "cosmicOriginBackground",
-    "className": "relative min-h-[450px] flex items-center justify-center text-white overflow-hidden p-8",
+    "id": "e1f2c3d4-a5b6-7c8d-9e0f-1234567890ab",
+    "type": "textAndImage",
     "content": {
-      "id": "b2c3d4e5-f6a1-b2c3-d4e5-f6a1b2c3d4e5",
-      "type": "container",
-      "name": "Background Container",
-      "content": [
-        {
-          "id": "c3d4e5f6-a1b2-c3d4-e5f6-a1b2c3d4e5f6",
-          "type": "image",
-          "name": "Background Image",
-          "className": "absolute inset-0 w-full h-full object-cover z-0 filter brightness-50",
-          "content": "https://images.unsplash.com/photo-1446776811953-b23d5795b4e6?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "alt": "A stunning view of Earth from space, with the sun rising over the horizon, symbolizing a new beginning."
-        },
-        {
-          "id": "d4e5f6a1-b2c3-d4e5-f6a1-b2c3d4e5f6a1",
-          "type": "column",
-          "name": "Content Column",
-          "className": "relative z-10 w-full max-w-4xl text-center flex flex-col items-center gap-4",
-          "content": [
-            {
-              "id": "e5f6a1b2-c3d4-e5f6-a1b2-c3d4e5f6a1b2",
-              "type": "heading1",
-              "name": "Heading",
-              "placeholder": "A Universe with a Beginning",
-              "content": "A Universe with a Beginning"
-            },
-            {
-              "id": "f6a1b2c3-d4e5-f6a1-b2c3-d4e5f6a1b2c3",
-              "type": "paragraph",
-              "name": "Paragraph",
-              "className": "text-xl italic font-light",
-              "placeholder": "The Big Bang theory's implication of a universe with a beginning suggests a first cause beyond the universe itself.",
-              "content": "The Big Bang theory's implication of a universe with a beginning suggests a first cause beyond the universe itself."
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id": "f0e1d2c3-b4a5-6789-0123-456789abcdef",
-    "slideName": "Three-Part Harmony",
-    "type": "threePartHarmony",
-    "className": "p-8 mx-auto flex flex-col justify-center items-center min-h-[450px] gap-6",
-    "content": {
-      "id": "e1d2c3b4-a5f0-e1d2-c3b4-a5f0e1d2c3b4",
+      "id": "f2e1d0c9-b8a7-6d5c-4b3a-210987654321",
+      "name": "Main Content Column",
       "type": "column",
-      "name": "Main Column",
-      "className": "w-full",
       "content": [
         {
-          "id": "d2c3b4a5-f0e1-d2c3-b4a5-f0e1d2c3b4a5",
-          "type": "heading2",
-          "name": "Title",
-          "className": "text-center mb-4",
-          "placeholder": "The Precision of Existence",
-          "content": "The Precision of Existence"
-        },
-        {
-          "id": "c3b4a5f0-e1d2-c3b4-a5f0-e1d2c3b4a5f0",
+          "id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+          "name": "Text and Image Container",
           "type": "resizable-column",
-          "name": "Three Columns",
-          "className": "grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-center",
           "content": [
             {
-              "id": "b4a5f0e1-d2c3-b4a5-f0e1-d2c3b4a5f0e1",
-              "type": "column",
-              "name": "Column 1",
-              "className": "p-4 border rounded-lg shadow-sm",
-              "content": [
-                {
-                  "id": "a5f0e1d2-c3b4-a5f0-e1d2-c3b4a5f0e1d2",
-                  "type": "heading3",
-                  "name": "Constants",
-                  "placeholder": "Physical Constants",
-                  "content": "Physical Constants"
-                },
-                {
-                  "id": "f0e1d2c3-b4a5-f0e1-d2c3-b4a5f0e1d2c3",
-                  "type": "paragraph",
-                  "name": "Paragraph",
-                  "placeholder": "The fundamental constants of physics, such as gravity and electromagnetism, are set at values that are exquisitely precise.",
-                  "content": ""
-                }
-              ]
-            },
-            {
-              "id": "e1d2c3b4-a5f0-e1d2-c3b4-a5f0e1d2c3b5",
-              "type": "column",
-              "name": "Column 2",
-              "className": "p-4 border rounded-lg shadow-sm bg-slate-50",
-              "content": [
-                {
-                  "id": "d2c3b4a5-f0e1-d2c3-b4a5-f0e1d2c3b4a6",
-                  "type": "image",
-                  "name": "Image",
-                  "className": "w-full h-40 object-cover rounded-md mb-2",
-                  "content": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                  "alt": "A complex and glowing computer motherboard, symbolizing intricate design and precise engineering."
-                },
-                {
-                  "id": "c3b4a5f0-e1d2-c3b4-a5f0-e1d2c3b4a5f7",
-                  "type": "paragraph",
-                  "name": "Paragraph",
-                  "className": "font-semibold",
-                  "placeholder": "The extreme fine-tuning of physical constants and initial conditions for life's existence points towards an intelligent designer.",
-                  "content": "The extreme fine-tuning of physical constants and initial conditions for life's existence points towards an intelligent designer."
-                }
-              ]
-            },
-            {
-              "id": "b4a5f0e1-d2c3-b4a5-f0e1-d2c3b4a5f0e8",
-              "type": "column",
-              "name": "Column 3",
-              "className": "p-4 border rounded-lg shadow-sm",
-              "content": [
-                {
-                  "id": "a5f0e1d2-c3b4-a5f0-e1d2-c3b4a5f0e1d9",
-                  "type": "heading3",
-                  "name": "Conditions",
-                  "placeholder": "Initial Conditions",
-                  "content": "Initial Conditions"
-                },
-                {
-                  "id": "f0e1d2c3-b4a5-f0e1-d2c3-b4a5f0e1d2c0",
-                  "type": "paragraph",
-                  "name": "Paragraph",
-                  "placeholder": "The initial state of the universe required an impossibly low entropy state to allow for the formation of complex structures.",
-                  "content": ""
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id": "12345678-90ab-cdef-0123-456789abcdef",
-    "slideName": "Feature Focus Left",
-    "type": "featureFocusLeft",
-    "className": "min-h-[450px] bg-gray-50",
-    "content": {
-      "id": "23456789-0abc-def0-1234-56789abcdef0",
-      "type": "column",
-      "name": "Column",
-      "content": [
-        {
-          "id": "34567890-abcd-ef01-2345-6789abcdef01",
-          "type": "resizable-column",
-          "name": "Image and Text",
-          "restrictToDrop": true,
-          "content": [
-            {
-              "id": "4567890a-bcde-f012-3456-789abcdef012",
-              "type": "image",
-              "name": "Image",
-              "content": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              "alt": "A close-up, detailed macro photograph of a human eye, showcasing its intricate and complex structure."
-            },
-            {
-              "id": "567890ab-cdef-0123-4567-89abcdef0123",
-              "type": "column",
+              "id": "b1c2d3e4-f5a6-7b8c-9d0e-1f2a3b4c5d6e",
               "name": "Text Column",
-              "className": "w-full h-full p-8 lg:p-12 flex flex-col justify-center",
+              "type": "column",
               "content": [
                 {
-                  "id": "67890abc-def0-1234-5678-9abcdef01234",
-                  "type": "heading2",
-                  "name": "Heading",
-                  "content": "Irreducible Complexity",
-                  "placeholder": "Irreducible Complexity"
+                  "id": "c1d2e3f4-a5b6-7c8d-9e0f-1234567890ac",
+                  "name": "Slide Title",
+                  "type": "heading1",
+                  "content": "The Next Frontier: Agentic AI",
+                  "placeholder": "The Next Frontier: Agentic AI"
                 },
                 {
-                  "id": "7890abcd-ef01-2345-6789-abcdef012345",
+                  "id": "d1e2f3a4-b5c6-7d8e-9f0a-1b2c3d4e5f6a",
+                  "name": "Introduction Paragraph",
                   "type": "paragraph",
-                  "name": "Paragraph",
-                  "className": "mt-4 text-lg",
-                  "content": "The irreducible complexity observed in biological systems is argued to defy explanation by gradual evolutionary processes, implying creation.",
-                  "placeholder": "The irreducible complexity observed in biological systems is argued to defy explanation by gradual evolutionary processes, implying creation."
-                },
+                  "content": "Agentic AI represents the next frontier in artificial intelligence, moving beyond simple task execution to autonomous, goal-driven systems that define the future.",
+                  "placeholder": "Moving beyond simple task execution, Agentic AI introduces autonomous, goal-driven systems that define the future of artificial intelligence."
+                }
+              ],
+              "className": "w-full md:w-1/2 h-full p-6 flex flex-col justify-center items-start text-left"
+            },
+            {
+              "id": "e1f2a3b4-c5d6-7e8f-9a0b-1c2d3e4f5a6b",
+              "name": "Image Column",
+              "type": "column",
+              "content": [
                 {
-                  "id": "890abcde-f012-3456-789a-bcdef0123456",
-                  "type": "paragraph",
-                  "name": "Paragraph",
-                  "className": "mt-2 text-gray-600",
-                  "content": "For example, the bacterial flagellum requires numerous protein parts to function. The absence of any single part renders it useless, challenging a step-by-step evolutionary origin.",
-                  "placeholder": "Add a supporting example..."
+                  "id": "f1a2b3c4-d5e6-7f8a-9b0c-1d2e3f4a5b6c",
+                  "alt": "Abstract representation of a glowing neural network or futuristic brain, symbolizing advanced, goal-driven artificial intelligence.",
+                  "name": "AI Frontier Image",
+                  "type": "image",
+                  "content": "https://images.unsplash.com/photo-1511370235395-d29759247333?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  "className": "rounded-xl shadow-lg w-full h-auto object-cover max-w-sm"
                 }
               ]
             }
-          ]
+          ],
+          "className": "flex flex-col md:flex-row items-center justify-center gap-8 p-6"
         }
       ]
-    }
+    },
+    "className": "min-h-[200px] p-8 mx-auto flex justify-center items-center bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg shadow-xl",
+    "slideName": "The Next Frontier: Agentic AI"
+  },
+  {
+    "id": "1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b4c5d6",
+    "type": "accentRight",
+    "content": {
+      "id": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+      "name": "Main Column",
+      "type": "column",
+      "content": [
+        {
+          "id": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+          "name": "Content Area",
+          "type": "resizable-column",
+          "content": [
+            {
+              "id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+              "name": "Text Content",
+              "type": "column",
+              "content": [
+                {
+                  "id": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+                  "name": "Headline",
+                  "type": "heading1",
+                  "content": "Skills for Complex Problem Solving",
+                  "placeholder": "Heading1"
+                },
+                {
+                  "id": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+                  "name": "Detail Paragraph",
+                  "type": "paragraph",
+                  "content": "Mastering agentic AI equips individuals with the skills to develop sophisticated solutions for complex, real-world problems that require adaptive decision-making.",
+                  "placeholder": "start typing here"
+                }
+              ],
+              "className": "w-full md:w-2/3 h-full p-8 flex flex-col justify-center items-start text-left"
+            },
+            {
+              "id": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+              "alt": "Close-up of hands interacting with a digital interface displaying data visualizations and problem-solving algorithms, symbolizing adaptive decision-making.",
+              "name": "Problem Solving Image",
+              "type": "image",
+              "content": "https://images.unsplash.com/photo-1551288259-f8319f39031c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "className": "w-full md:w-1/3 h-auto object-cover rounded-lg shadow-md",
+              "restrictToDrop": true
+            }
+          ],
+          "className": "flex flex-col md:flex-row items-center gap-8",
+          "restrictToDrop": true
+        }
+      ]
+    },
+    "className": "min-h-[300px] p-8 mx-auto flex justify-center items-center bg-white border-l-8 border-purple-500",
+    "slideName": "Mastering Agentic AI: Solutions for Complex Problems"
+  },
+  {
+    "id": "8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+    "type": "twoColumnsWithHeadings",
+    "content": {
+      "id": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+      "name": "Main Column",
+      "type": "column",
+      "content": [
+        {
+          "id": "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
+          "name": "Slide Title",
+          "type": "title",
+          "content": "Driving Efficiency with Agentic AI",
+          "placeholder": "Untitled Card"
+        },
+        {
+          "id": "b1c2d3e4-f5a6-7b8c-9d0e-1f2a3b4c5d6f",
+          "name": "Two Content Columns",
+          "type": "resizable-column",
+          "content": [
+            {
+              "id": "c2d3e4f5-a6b7-c8d9-e0f1-a2b3c4d5e6f0",
+              "name": "Automation Column",
+              "type": "column",
+              "content": [
+                {
+                  "id": "d3e4f5a6-b7c8-d9e0-f1a2-b3c4d5e6f7a1",
+                  "name": "Heading 3",
+                  "type": "heading3",
+                  "content": "Automating Intricate Processes",
+                  "placeholder": "Heading 3"
+                },
+                {
+                  "id": "e4f5a6b7-c8d9-e0f1-a2b3-c4d5e6f7a8b2",
+                  "name": "Paragraph",
+                  "type": "paragraph",
+                  "content": "Understanding agentic AI is crucial for streamlining complex workflows and automating tasks that require nuanced decision-making.",
+                  "placeholder": "Start typing..."
+                }
+              ],
+              "className": "bg-white p-6 rounded-lg shadow-md"
+            },
+            {
+              "id": "f5a6b7c8-d9e0-f1a2-b3c4-d5e6f7a8b9c3",
+              "name": "Efficiency Column",
+              "type": "column",
+              "content": [
+                {
+                  "id": "a6b7c8d9-e0f1-a2b3-c4d5-e6f7a8b9c0d4",
+                  "name": "Heading 3",
+                  "type": "heading3",
+                  "content": "Enhancing Operational Efficiency",
+                  "placeholder": "Heading 3"
+                },
+                {
+                  "id": "b7c8d9e0-f1a2-b3c4-d5e6-f7a8b9c0d1e5",
+                  "name": "Paragraph",
+                  "type": "paragraph",
+                  "content": "Its application leads to significant improvements in productivity and resource utilization across diverse industries.",
+                  "placeholder": "Start typing..."
+                }
+              ],
+              "className": "bg-white p-6 rounded-lg shadow-md"
+            }
+          ],
+          "className": "flex flex-col md:flex-row gap-6 mt-6"
+        }
+      ]
+    },
+    "className": "p-8 mx-auto flex justify-center items-center bg-gray-50 rounded-lg shadow-inner",
+    "slideName": "Driving Efficiency with Agentic AI"
+  },
+  {
+    "id": "c9d0e1f2-a3b4-c5d6-e7f8-a9b0c1d2e3f4",
+    "type": "blank-card",
+    "content": {
+      "id": "d0e1f2a3-b4c5-d6e7-f8a9-b0c1d2e3f4a5",
+      "name": "Opportunities Column",
+      "type": "column",
+      "content": [
+        {
+          "id": "e1f2a3b4-c5d6-e7f8-a9b0-c1d2e3f4a5b6",
+          "name": "Slide Title",
+          "type": "title",
+          "content": "Unlock Your Future: Career Opportunities in Agentic AI",
+          "placeholder": "Untitled Card"
+        },
+        {
+          "id": "f2a3b4c5-d6e7-f8a9-b0c1-d2e3f4a5b6c7",
+          "name": "Career Paths List",
+          "type": "bulletedList",
+          "content": [
+            "Autonomous Systems Development Engineer",
+            "Intelligent Automation Specialist",
+            "Advanced AI Research Scientist",
+            "AI Solutions Architect",
+            "Robotics and AI Integration Expert",
+            "Machine Learning Engineer (Agentic Focus)"
+          ],
+          "className": "text-lg text-gray-800 list-disc list-inside mt-6 space-y-2"
+        },
+        {
+          "id": "g3h4i5j6-k7l8-m9n0-p1q2-r3s4t5u6v7w8",
+          "name": "Concluding Remark",
+          "type": "paragraph",
+          "content": "Proficiency in agentic AI opens up significant career opportunities in cutting-edge fields like autonomous systems, intelligent automation, and advanced AI development.",
+          "placeholder": "Proficiency in agentic AI opens up significant career opportunities in cutting-edge fields like autonomous systems, intelligent automation, and advanced AI development."
+        }
+      ]
+    },
+    "className": "p-10 mx-auto flex flex-col justify-center items-center min-h-[200px] bg-gradient-to-tr from-green-50 to-teal-100 rounded-2xl shadow-xl",
+    "slideName": "Career Opportunities in Agentic AI"
+  },
+  {
+    "id": "d5e6f7a8-b9c0-d1e2-f3a4-b5c6d7e8f9a0",
+    "type": "imageAndText",
+    "content": {
+      "id": "e6f7a8b9-c0d1-e2f3-a4b5-c6d7e8f9a0b1",
+      "name": "Main Content Column",
+      "type": "column",
+      "content": [
+        {
+          "id": "f7a8b9c0-d1e2-f3a4-b5c6-d7e8f9a0b1c2",
+          "name": "Image and Text Layout",
+          "type": "resizable-column",
+          "content": [
+            {
+              "id": "a8b9c0d1-e2f3-a4b5-c6d7-e8f9a0b1c2d3",
+              "name": "Text Content Column",
+              "type": "column",
+              "content": [
+                {
+                  "id": "b9c0d1e2-f3a4-b5c6-d7e8-f9a0b1c2d3e4",
+                  "name": "Empowerment Headline",
+                  "type": "heading1",
+                  "content": "Revolutionizing Industries Through Innovation",
+                  "placeholder": "Heading1"
+                },
+                {
+                  "id": "c0d1e2f3-a4b5-c6d7-e8f9-a0b1c2d3e4f5",
+                  "name": "Empowerment Paragraph",
+                  "type": "paragraph",
+                  "content": "Learning agentic AI empowers innovators to design and deploy intelligent agents that can revolutionize industries and create unprecedented value.",
+                  "placeholder": "start typing here"
+                }
+              ],
+              "className": "w-full md:w-1/2 h-full p-6 flex flex-col justify-center items-start text-left"
+            },
+            {
+              "id": "d1e2f3a4-b5c6-d7e8-f9a0-b1c2d3e4f5a6",
+              "name": "Innovation Image Column",
+              "type": "column",
+              "content": [
+                {
+                  "id": "e2f3a4b5-c6d7-e8f9-a0b1-c2d3e4f5a6b7",
+                  "alt": "Abstract illustration of a glowing lightbulb connected to a complex network, symbolizing innovation, new ideas, and interconnected intelligent systems.",
+                  "name": "Innovation Visual",
+                  "type": "image",
+                  "content": "https://images.unsplash.com/photo-1507925921958-818625906f23?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  "className": "rounded-xl shadow-lg w-full h-auto object-cover max-w-md"
+                }
+              ]
+            }
+          ],
+          "className": "flex flex-col md:flex-row-reverse items-center justify-center gap-8 p-6"
+        }
+      ]
+    },
+    "className": "min-h-[200px] p-8 mx-auto flex justify-center items-center bg-blue-50 rounded-xl shadow-2xl",
+    "slideName": "Empowering Innovators with Agentic AI"
   }
 ]

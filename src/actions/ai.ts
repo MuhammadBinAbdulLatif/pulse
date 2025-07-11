@@ -1,8 +1,8 @@
 "use server";
-import { GoogleGenAI  } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 import { onAuthenticateUser } from "./User";
 import { client } from "@/lib/prisma";
-import {  ContentType, } from "@/lib/types";
+import { ContentType } from "@/lib/types";
 
 import { v4 as uuidv4 } from "uuid";
 const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY });
@@ -12,7 +12,6 @@ if (!process.env.GOOGLE_API_KEY) {
   // In a real application, you might want to prevent the server from even starting.
   // For this server action, we'll let it fail on execution.
 }
-
 
 export const generateCreativePrompt = async (
   userPrompt: string,
@@ -133,7 +132,6 @@ The JSON object must follow this structure:
 //   return images
 // }
 
-
 // const generateImageUrl = async (prompt: string)=> {
 //   const improvedPrompt = `
 // Create a highly realistic, professional image based on the following description. The image should look as if captured in real life, with attention to detail, lighting, and texture.
@@ -163,11 +161,9 @@ The JSON object must follow this structure:
 // }
 //  catch (error) {
 //   console.error('Failed to generate image', error)
-//   return 'https://via.placeholder.com/1024'  
+//   return 'https://via.placeholder.com/1024'
 // }
 // }
-
-
 
 // const replaceImagePlaceholders = async (layout: Slide)=> {
 //   const imageComponents = findImageComponents(layout.content)
@@ -179,424 +175,424 @@ The JSON object must follow this structure:
 // }
 
 const existingLayouts = [
-    {
+  {
+    id: uuidv4(),
+    slideName: "Blank card",
+    type: "blank-card",
+    className: "p-8 mx-auto flex justify-center items-center min-h-[200px]",
+    content: {
       id: uuidv4(),
-      slideName: 'Blank card',
-      type: 'blank-card',
-      className: 'p-8 mx-auto flex justify-center items-center min-h-[200px]',
-      content: {
-        id: uuidv4(),
-        type: 'column' as ContentType,
-        name: 'Column',
-        content: [
-          {
-            id: uuidv4(),
-            type: 'title' as ContentType,
-            name: 'Title',
-            content: '',
-            placeholder: 'Untitled Card',
-          },
-        ],
-      },
+      type: "column" as ContentType,
+      name: "Column",
+      content: [
+        {
+          id: uuidv4(),
+          type: "title" as ContentType,
+          name: "Title",
+          content: "",
+          placeholder: "Untitled Card",
+        },
+      ],
     },
-  
-    {
-      id: uuidv4(),
-      slideName: 'Accent left',
-      type: 'accentLeft',
-      className: 'min-h-[300px]',
-      content: {
-        id: uuidv4(),
-        type: 'column' as ContentType,
-        name: 'Column',
-        restrictDropTo: true,
-        content: [
-          {
-            id: uuidv4(),
-            type: 'resizable-column' as ContentType,
-            name: 'Resizable column',
-            restrictToDrop: true,
-            content: [
-              {
-                id: uuidv4(),
-                type: 'image' as ContentType,
-                name: 'Image',
-                content:
-                  'https://plus.unsplash.com/premium_photo-1729004379397-ece899804701?q=80&w=2767&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                alt: 'Title',
-              },
-              {
-                id: uuidv4(),
-                type: 'column' as ContentType,
-                name: 'Column',
-                content: [
-                  {
-                    id: uuidv4(),
-                    type: 'heading1' as ContentType,
-                    name: 'Heading1',
-                    content: '',
-                    placeholder: 'Heading1',
-                  },
-                  {
-                    id: uuidv4(),
-                    type: 'paragraph' as ContentType,
-                    name: 'Paragraph',
-                    content: '',
-                    placeholder: 'start typing here',
-                  },
-                ],
-                className: 'w-full h-full p-8 flex justify-center items-center',
-                placeholder: 'Heading1',
-              },
-            ],
-          },
-        ],
-      },
-    },
-  
-    {
-      id: uuidv4(),
-      slideName: 'Accent Right',
-      type: 'accentRight',
-      className: 'min-h-[300px]',
-      content: {
-        id: uuidv4(),
-        type: 'column' as ContentType,
-        name: 'Column',
-        content: [
-          {
-            id: uuidv4(),
-            type: 'resizable-column' as ContentType,
-            name: 'Resizable column',
-            restrictToDrop: true,
-            content: [
-              {
-                id: uuidv4(),
-                type: 'column' as ContentType,
-                name: 'Column',
-                content: [
-                  {
-                    id: uuidv4(),
-                    type: 'heading1' as ContentType,
-                    name: 'Heading1',
-                    content: '',
-                    placeholder: 'Heading1',
-                  },
-                  {
-                    id: uuidv4(),
-                    type: 'paragraph' as ContentType,
-                    name: 'Paragraph',
-                    content: '',
-                    placeholder: 'start typing here',
-                  },
-                ],
-                className: 'w-full h-full p-8 flex justify-center items-center',
-                placeholder: 'Heading1',
-              },
-              {
-                id: uuidv4(),
-                type: 'image' as ContentType,
-                name: 'Image',
-                restrictToDrop: true,
-                content:
-                  'https://plus.unsplash.com/premium_photo-1729004379397-ece899804701?q=80&w=2767&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                alt: 'Title',
-              },
-            ],
-          },
-        ],
-      },
-    },
-  
-    // {
-    //   id: uuidv4(),
-    //   slideName: 'Image and text',
-    //   type: 'imageAndText',
-    //   className: 'min-h-[200px] p-8 mx-auto flex justify-center items-center',
-    //   content: {
-    //     id: uuidv4(),
-    //     type: 'column' as ContentType,
-    //     name: 'Column',
-    //     content: [
-    //       {
-    //         id: uuidv4(),
-    //         type: 'resizable-column' as ContentType,
-    //         name: 'Image and text',
-    //         className: 'border',
-    //         content: [
-    //           {
-    //             id: uuidv4(),
-    //             type: 'column' as ContentType,
-    //             name: 'Column',
-    //             content: [
-    //               {
-    //                 id: uuidv4(),
-    //                 type: 'image' as ContentType,
-    //                 name: 'Image',
-    //                 className: 'p-3',
-    //                 content:
-    //                   'https://plus.unsplash.com/premium_photo-1729004379397-ece899804701?q=80&w=2767&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    //                 alt: 'Title',
-    //               },
-    //             ],
-    //           },
-    //           {
-    //             id: uuidv4(),
-    //             type: 'column' as ContentType,
-    //             name: 'Column',
-    //             content: [
-    //               {
-    //                 id: uuidv4(),
-    //                 type: 'heading1' as ContentType,
-    //                 name: 'Heading1',
-    //                 content: '',
-    //                 placeholder: 'Heading1',
-    //               },
-    //               {
-    //                 id: uuidv4(),
-    //                 type: 'paragraph' as ContentType,
-    //                 name: 'Paragraph',
-    //                 content: '',
-    //                 placeholder: 'start typing here',
-    //               },
-    //             ],
-    //             className: 'w-full h-full p-8 flex justify-center items-center',
-    //             placeholder: 'Heading1',
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    // },
-  
-    // {
-    //   id: uuidv4(),
-    //   slideName: 'Text and image',
-    //   type: 'textAndImage',
-    //   className: 'min-h-[200px] p-8 mx-auto flex justify-center items-center',
-    //   content: {
-    //     id: uuidv4(),
-    //     type: 'column' as ContentType,
-    //     name: 'Column',
-    //     content: [
-    //       {
-    //         id: uuidv4(),
-    //         type: 'resizable-column' as ContentType,
-    //         name: 'Text and image',
-    //         className: 'border',
-    //         content: [
-    //           {
-    //             id: uuidv4(),
-    //             type: 'column' as ContentType,
-    //             name: '',
-    //             content: [
-    //               {
-    //                 id: uuidv4(),
-    //                 type: 'heading1' as ContentType,
-    //                 name: 'Heading1',
-    //                 content: '',
-    //                 placeholder: 'Heading1',
-    //               },
-    //               {
-    //                 id: uuidv4(),
-    //                 type: 'paragraph' as ContentType,
-    //                 name: 'Paragraph',
-    //                 content: '',
-    //                 placeholder: 'start typing here',
-    //               },
-    //             ],
-    //             className: 'w-full h-full p-8 flex justify-center items-center',
-    //             placeholder: 'Heading1',
-    //           },
-    //           {
-    //             id: uuidv4(),
-    //             type: 'column' as ContentType,
-    //             name: 'Column',
-    //             content: [
-    //               {
-    //                 id: uuidv4(),
-    //                 type: 'image' as ContentType,
-    //                 name: 'Image',
-    //                 className: 'p-3',
-    //                 content:
-    //                   'https://plus.unsplash.com/premium_photo-1729004379397-ece899804701?q=80&w=2767&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    //                 alt: 'Title',
-    //               },
-    //             ],
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    // },
-  
-    {
-      id: uuidv4(),
-      slideName: 'Two columns',
-      type: 'twoColumns',
-      className: 'p-4 mx-auto flex justify-center items-center',
-      content: {
-        id: uuidv4(),
-        type: 'column' as ContentType,
-        name: 'Column',
-        content: [
-          {
-            id: uuidv4(),
-            type: 'title' as ContentType,
-            name: 'Title',
-            content: '',
-            placeholder: 'Untitled Card',
-          },
-          {
-            id: uuidv4(),
-            type: 'resizable-column' as ContentType,
-            name: 'Text and image',
-            className: 'border',
-            content: [
-              {
-                id: uuidv4(),
-                type: 'paragraph' as ContentType,
-                name: 'Paragraph',
-                content: '',
-                placeholder: 'Start typing...',
-              },
-              {
-                id: uuidv4(),
-                type: 'paragraph' as ContentType,
-                name: 'Paragraph',
-                content: '',
-                placeholder: 'Start typing...',
-              },
-            ],
-          },
-        ],
-      },
-    },
-  
-    {
-      id: uuidv4(),
-      slideName: 'Two columns with headings',
-      type: 'twoColumnsWithHeadings',
-      className: 'p-4 mx-auto flex justify-center items-center',
-      content: {
-        id: uuidv4(),
-        type: 'column' as ContentType,
-        name: 'Column',
-        content: [
-          {
-            id: uuidv4(),
-            type: 'title' as ContentType,
-            name: 'Title',
-            content: '',
-            placeholder: 'Untitled Card',
-          },
-          {
-            id: uuidv4(),
-            type: 'resizable-column' as ContentType,
-            name: 'Text and image',
-            className: 'border',
-            content: [
-              {
-                id: uuidv4(),
-                type: 'column' as ContentType,
-                name: 'Column',
-                content: [
-                  {
-                    id: uuidv4(),
-                    type: 'heading3' as ContentType,
-                    name: 'Heading3',
-                    content: '',
-                    placeholder: 'Heading 3',
-                  },
-                  {
-                    id: uuidv4(),
-                    type: 'paragraph' as ContentType,
-                    name: 'Paragraph',
-                    content: '',
-                    placeholder: 'Start typing...',
-                  },
-                ],
-              },
-              {
-                id: uuidv4(),
-                type: 'column' as ContentType,
-                name: 'Column',
-                content: [
-                  {
-                    id: uuidv4(),
-                    type: 'heading3' as ContentType,
-                    name: 'Heading3',
-                    content: '',
-                    placeholder: 'Heading 3',
-                  },
-                  {
-                    id: uuidv4(),
-                    type: 'paragraph' as ContentType,
-                    name: 'Paragraph',
-                    content: '',
-                    placeholder: 'Start typing...',
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    },
-  
-    // {
-    //   id: uuidv4(),
-    //   slideName: 'Three column',
-    //   type: 'threeColumns',
-    //   className: 'p-4 mx-auto flex justify-center items-center',
-    //   content: {
-    //     id: uuidv4(),
-    //     type: 'column' as ContentType,
-    //     name: 'Column',
-    //     content: [
-    //       {
-    //         id: uuidv4(),
-    //         type: 'title' as ContentType,
-    //         name: 'Title',
-    //         content: '',
-    //         placeholder: 'Untitled Card',
-    //       },
-    //       {
-    //         id: uuidv4(),
-    //         type: 'resizable-column' as ContentType,
-    //         name: 'Text and image',
-    //         className: 'border',
-    //         content: [
-    //           {
-    //             id: uuidv4(),
-    //             type: 'paragraph' as ContentType,
-    //             name: '',
-    //             content: '',
-    //             placeholder: 'Start typing...',
-    //           },
-    //           {
-    //             id: uuidv4(),
-    //             type: 'paragraph' as ContentType,
-    //             name: '',
-    //             content: '',
-    //             placeholder: 'Start typing...',
-    //           },
-    //           {
-    //             id: uuidv4(),
-    //             type: 'paragraph' as ContentType,
-    //             name: '',
-    //             content: '',
-    //             placeholder: 'Start typing...',
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    // },
-  ]
+  },
 
-const generateLayoutsJson = async (outlineArray: string)=> {
-    const prompt = `"You are a highly creative AI that generates JSON-based layouts for presentations. "
+  {
+    id: uuidv4(),
+    slideName: "Accent left",
+    type: "accentLeft",
+    className: "min-h-[300px]",
+    content: {
+      id: uuidv4(),
+      type: "column" as ContentType,
+      name: "Column",
+      restrictDropTo: true,
+      content: [
+        {
+          id: uuidv4(),
+          type: "resizable-column" as ContentType,
+          name: "Resizable column",
+          restrictToDrop: true,
+          content: [
+            {
+              id: uuidv4(),
+              type: "image" as ContentType,
+              name: "Image",
+              content:
+                "https://plus.unsplash.com/premium_photo-1729004379397-ece899804701?q=80&w=2767&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              alt: "Title",
+            },
+            {
+              id: uuidv4(),
+              type: "column" as ContentType,
+              name: "Column",
+              content: [
+                {
+                  id: uuidv4(),
+                  type: "heading1" as ContentType,
+                  name: "Heading1",
+                  content: "",
+                  placeholder: "Heading1",
+                },
+                {
+                  id: uuidv4(),
+                  type: "paragraph" as ContentType,
+                  name: "Paragraph",
+                  content: "",
+                  placeholder: "start typing here",
+                },
+              ],
+              className: "w-full h-full p-8 flex justify-center items-center",
+              placeholder: "Heading1",
+            },
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: uuidv4(),
+    slideName: "Accent Right",
+    type: "accentRight",
+    className: "min-h-[300px]",
+    content: {
+      id: uuidv4(),
+      type: "column" as ContentType,
+      name: "Column",
+      content: [
+        {
+          id: uuidv4(),
+          type: "resizable-column" as ContentType,
+          name: "Resizable column",
+          restrictToDrop: true,
+          content: [
+            {
+              id: uuidv4(),
+              type: "column" as ContentType,
+              name: "Column",
+              content: [
+                {
+                  id: uuidv4(),
+                  type: "heading1" as ContentType,
+                  name: "Heading1",
+                  content: "",
+                  placeholder: "Heading1",
+                },
+                {
+                  id: uuidv4(),
+                  type: "paragraph" as ContentType,
+                  name: "Paragraph",
+                  content: "",
+                  placeholder: "start typing here",
+                },
+              ],
+              className: "w-full h-full p-8 flex justify-center items-center",
+              placeholder: "Heading1",
+            },
+            {
+              id: uuidv4(),
+              type: "image" as ContentType,
+              name: "Image",
+              restrictToDrop: true,
+              content:
+                "https://plus.unsplash.com/premium_photo-1729004379397-ece899804701?q=80&w=2767&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              alt: "Title",
+            },
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: uuidv4(),
+    slideName: "Image and text",
+    type: "imageAndText",
+    className: "min-h-[200px] p-8 mx-auto flex justify-center items-center",
+    content: {
+      id: uuidv4(),
+      type: "column" as ContentType,
+      name: "Column",
+      content: [
+        {
+          id: uuidv4(),
+          type: "resizable-column" as ContentType,
+          name: "Image and text",
+          className: "border",
+          content: [
+            {
+              id: uuidv4(),
+              type: "column" as ContentType,
+              name: "Column",
+              content: [
+                {
+                  id: uuidv4(),
+                  type: "image" as ContentType,
+                  name: "Image",
+                  className: "p-3",
+                  content:
+                    "https://plus.unsplash.com/premium_photo-1729004379397-ece899804701?q=80&w=2767&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  alt: "Title",
+                },
+              ],
+            },
+            {
+              id: uuidv4(),
+              type: "column" as ContentType,
+              name: "Column",
+              content: [
+                {
+                  id: uuidv4(),
+                  type: "heading1" as ContentType,
+                  name: "Heading1",
+                  content: "",
+                  placeholder: "Heading1",
+                },
+                {
+                  id: uuidv4(),
+                  type: "paragraph" as ContentType,
+                  name: "Paragraph",
+                  content: "",
+                  placeholder: "start typing here",
+                },
+              ],
+              className: "w-full h-full p-8 flex justify-center items-center",
+              placeholder: "Heading1",
+            },
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: uuidv4(),
+    slideName: "Text and image",
+    type: "textAndImage",
+    className: "min-h-[200px] p-8 mx-auto flex justify-center items-center",
+    content: {
+      id: uuidv4(),
+      type: "column" as ContentType,
+      name: "Column",
+      content: [
+        {
+          id: uuidv4(),
+          type: "resizable-column" as ContentType,
+          name: "Text and image",
+          className: "border",
+          content: [
+            {
+              id: uuidv4(),
+              type: "column" as ContentType,
+              name: "",
+              content: [
+                {
+                  id: uuidv4(),
+                  type: "heading1" as ContentType,
+                  name: "Heading1",
+                  content: "",
+                  placeholder: "Heading1",
+                },
+                {
+                  id: uuidv4(),
+                  type: "paragraph" as ContentType,
+                  name: "Paragraph",
+                  content: "",
+                  placeholder: "start typing here",
+                },
+              ],
+              className: "w-full h-full p-8 flex justify-center items-center",
+              placeholder: "Heading1",
+            },
+            {
+              id: uuidv4(),
+              type: "column" as ContentType,
+              name: "Column",
+              content: [
+                {
+                  id: uuidv4(),
+                  type: "image" as ContentType,
+                  name: "Image",
+                  className: "p-3",
+                  content:
+                    "https://plus.unsplash.com/premium_photo-1729004379397-ece899804701?q=80&w=2767&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  alt: "Title",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: uuidv4(),
+    slideName: "Two columns",
+    type: "twoColumns",
+    className: "p-4 mx-auto flex justify-center items-center",
+    content: {
+      id: uuidv4(),
+      type: "column" as ContentType,
+      name: "Column",
+      content: [
+        {
+          id: uuidv4(),
+          type: "title" as ContentType,
+          name: "Title",
+          content: "",
+          placeholder: "Untitled Card",
+        },
+        {
+          id: uuidv4(),
+          type: "resizable-column" as ContentType,
+          name: "Text and image",
+          className: "border",
+          content: [
+            {
+              id: uuidv4(),
+              type: "paragraph" as ContentType,
+              name: "Paragraph",
+              content: "",
+              placeholder: "Start typing...",
+            },
+            {
+              id: uuidv4(),
+              type: "paragraph" as ContentType,
+              name: "Paragraph",
+              content: "",
+              placeholder: "Start typing...",
+            },
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: uuidv4(),
+    slideName: "Two columns with headings",
+    type: "twoColumnsWithHeadings",
+    className: "p-4 mx-auto flex justify-center items-center",
+    content: {
+      id: uuidv4(),
+      type: "column" as ContentType,
+      name: "Column",
+      content: [
+        {
+          id: uuidv4(),
+          type: "title" as ContentType,
+          name: "Title",
+          content: "",
+          placeholder: "Untitled Card",
+        },
+        {
+          id: uuidv4(),
+          type: "resizable-column" as ContentType,
+          name: "Text and image",
+          className: "border",
+          content: [
+            {
+              id: uuidv4(),
+              type: "column" as ContentType,
+              name: "Column",
+              content: [
+                {
+                  id: uuidv4(),
+                  type: "heading3" as ContentType,
+                  name: "Heading3",
+                  content: "",
+                  placeholder: "Heading 3",
+                },
+                {
+                  id: uuidv4(),
+                  type: "paragraph" as ContentType,
+                  name: "Paragraph",
+                  content: "",
+                  placeholder: "Start typing...",
+                },
+              ],
+            },
+            {
+              id: uuidv4(),
+              type: "column" as ContentType,
+              name: "Column",
+              content: [
+                {
+                  id: uuidv4(),
+                  type: "heading3" as ContentType,
+                  name: "Heading3",
+                  content: "",
+                  placeholder: "Heading 3",
+                },
+                {
+                  id: uuidv4(),
+                  type: "paragraph" as ContentType,
+                  name: "Paragraph",
+                  content: "",
+                  placeholder: "Start typing...",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: uuidv4(),
+    slideName: "Three column",
+    type: "threeColumns",
+    className: "p-4 mx-auto flex justify-center items-center",
+    content: {
+      id: uuidv4(),
+      type: "column" as ContentType,
+      name: "Column",
+      content: [
+        {
+          id: uuidv4(),
+          type: "title" as ContentType,
+          name: "Title",
+          content: "",
+          placeholder: "Untitled Card",
+        },
+        {
+          id: uuidv4(),
+          type: "resizable-column" as ContentType,
+          name: "Text and image",
+          className: "border",
+          content: [
+            {
+              id: uuidv4(),
+              type: "paragraph" as ContentType,
+              name: "",
+              content: "",
+              placeholder: "Start typing...",
+            },
+            {
+              id: uuidv4(),
+              type: "paragraph" as ContentType,
+              name: "",
+              content: "",
+              placeholder: "Start typing...",
+            },
+            {
+              id: uuidv4(),
+              type: "paragraph" as ContentType,
+              name: "",
+              content: "",
+              placeholder: "Start typing...",
+            },
+          ],
+        },
+      ],
+    },
+  },
+];
+
+const generateLayoutsJson = async (outlineArray: string) => {
+  const prompt = `"You are a highly creative AI that generates JSON-based layouts for presentations. "
     "I will provide you with an array of outlines, and for each outline, you must generate a unique and creative layout. "
     "Use the existing layouts as examples for structure and design, and generate unique designs based on the provided outline. "
     "### Guidelines: "
@@ -606,6 +602,36 @@ const generateLayoutsJson = async (outlineArray: string)=> {
     "4. Fill placeholder data into content fields where required. "
     "5. Generate unique image placeholders for the 'content' property of image components and also alt text according to the outline. "
     "6. Ensure proper formatting and schema alignment for the output JSON. "
+    "The types of elements supported are : "
+    "column"
+"resizable-column"
+"text"
+"paragraph"
+"image"
+"table"
+"multiColumn"
+"blank"
+"imageAndText"
+"heading1"
+"heading2"
+"heading3"
+"title"
+"heading4"
+"table"
+"blockquote"
+"numberedList"
+"bulletedList"
+"code"
+"link"
+"quote"
+"divider"
+"calloutBox"
+"todoList"
+"bulletList"
+"codeBlock"
+"customButton"
+"table"
+"tableOfContents"
     "### Example Layouts: "
     "${JSON.stringify(existingLayouts, null, 2)} "
     "### Outline Array: "
@@ -619,10 +645,10 @@ const generateLayoutsJson = async (outlineArray: string)=> {
     "- Focus on the main subject(s) of the image and any relevant details such as colors, shapes, people, or objects. "
     "- Ensure the alt text aligns with the context of the presentation slide it will be used on (e.g., professional, educational, business-related). "
     "- Avoid using terms like \"image of\" or \"picture of,\" and instead focus directly on the content and meaning. "
-    "Output the layouts in JSON format. Ensure there are no duplicate layouts across the array."`
-    try {
-      console.log('Generating layouts.')
-     const response = await ai.models.generateContent({
+    "Output the layouts in JSON format. Ensure there are no duplicate layouts across the array."`;
+  try {
+    console.log("Generating layouts.");
+    const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: [
         {
@@ -642,33 +668,35 @@ const generateLayoutsJson = async (outlineArray: string)=> {
         temperature: 0.7, // Slightly increased for nuanced, yet consistent results
       },
     });
-      const responseContent = response.text;
-      if(!responseContent){
-        return {status: 400, error: 'No content generated'}
-      }
-      let jsonResponse;
-      try {
-        const cleanResponseContent = responseContent
-      .replace(/```json\n|```/g, "")
-      .trim();
-        jsonResponse = JSON.parse(cleanResponseContent)
-        // await Promise.all(jsonResponse.map(replaceImagePlaceholders))
-        console.log(cleanResponseContent)
-      } catch (error) {
-        console.log('Error:', error)
-        throw new Error('Invalid Json format received from AI')
-      }
-      if(!jsonResponse){
-        return {status: 401, error: 'Errro creating Presentation, JSON not parsed'}
-
-      }
-      return {status: 200, data: jsonResponse}
+    const responseContent = response.text;
+    if (!responseContent) {
+      return { status: 400, error: "No content generated" };
+    }
+    let jsonResponse;
+    try {
+      const cleanResponseContent = responseContent
+        .replace(/```json\n|```/g, "")
+        .trim();
+      jsonResponse = JSON.parse(cleanResponseContent);
+      // await Promise.all(jsonResponse.map(replaceImagePlaceholders))
+      console.log(cleanResponseContent);
     } catch (error) {
-      console.error("Error generating slides from Google GenAI:", error);
+      console.log("Error:", error);
+      throw new Error("Invalid Json format received from AI");
+    }
+    if (!jsonResponse) {
+      return {
+        status: 401,
+        error: "Errro creating Presentation, JSON not parsed",
+      };
+    }
+    return { status: 200, data: jsonResponse };
+  } catch (error) {
+    console.error("Error generating slides from Google GenAI:", error);
     // Return a generic error to the client for security.
     return { status: 500, message: "An internal server error occurred." };
-    }
-}
+  }
+};
 
 export const generateLayouts = async (projectId: string, theme: string) => {
   try {
@@ -676,35 +704,40 @@ export const generateLayouts = async (projectId: string, theme: string) => {
       return { status: 400, error: "Project ID is required" };
     }
     const checkUser = await onAuthenticateUser();
-    if (checkUser?.status !== 200 || !checkUser?.user || !checkUser.user.subscription) {
+    if (
+      checkUser?.status !== 200 ||
+      !checkUser?.user ||
+      !checkUser.user.subscription
+    ) {
       return { status: 403, error: "User not authenticated" };
     }
     const project = await client.project.findUnique({
-        where: {
-            id: projectId,
-            isDeleted: false
-        }
-    })
-    if(!project){
-        return {status: 404, error: 'Project not found'}
+      where: {
+        id: projectId,
+        isDeleted: false,
+      },
+    });
+    if (!project) {
+      return { status: 404, error: "Project not found" };
     }
-    if(!project.outlines || project.outlines.length === 0) {
-        return {status: 400, error: 'Project does not have any outlines'}
+    if (!project.outlines || project.outlines.length === 0) {
+      return { status: 400, error: "Project does not have any outlines" };
     }
-    const layouts  = await generateLayoutsJson(JSON.stringify(project.outlines))
+    const layouts = await generateLayoutsJson(JSON.stringify(project.outlines));
 
-    if(layouts.status !== 200){
-        return layouts
+    if (layouts.status !== 200) {
+      return layouts;
     }
     await client.project.update({
-        where: {
-            id: project.id
-        },
-        data: {
-              slides: layouts.data, themeName: theme
-        }
-    })
-    return {status: 200, data: layouts.data}
+      where: {
+        id: project.id,
+      },
+      data: {
+        slides: layouts.data,
+        themeName: theme,
+      },
+    });
+    return { status: 200, data: layouts.data };
   } catch (error) {
     console.error("Error generating presentation from Google GenAI:", error);
     // Return a generic error to the client for security.
